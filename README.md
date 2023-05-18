@@ -1,2 +1,2 @@
 # palindrome-stack
-checking if a string is palindrome using a stack
+Checking if a string is a palindrome. Implemented using a stack *Happy face emoji*
