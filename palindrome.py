@@ -4,15 +4,16 @@
 
 from SimpleStack import Stack                                                   # Imports the necessary python module
 
-
+# Time Complexity: O()
+# Space Complexity: O()
 def is_palindrome():
 
     alphabet_lower = "abcdefghijklmnopqrstuvwxyz"                               # Creates a string of lowercase letters
 
     word = input("\nPlease Enter a String: ").strip()                           # Asks the user for input
 
-    while not word and word not in alphabet_lower:                              # Validates input
-        print("String Invalid")
+    while not word:                                                             # Checks if string is empty
+        print("String is Empty")
         word = input("\nPlease Enter a String: ").strip()
     
     original_stack = Stack(len(word))                                           # Creates two ojects of the Stack
@@ -23,6 +24,10 @@ def is_palindrome():
             original_stack.push(letter.lower())                                 # and if letters are in alphabet_lower
             copy_stack.push(letter.lower())
     
+    if original_stack.isEmpty():                                                # returns if the stack has no letters
+        print("No letters were found.")
+        return
+
     original_word = ''                                                          # Creates an empty string
     reverse = ''                                                                # Build the reversed version
     while not original_stack.isEmpty():                                         # by popping the original_stack until empty
