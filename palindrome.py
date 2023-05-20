@@ -8,17 +8,17 @@ from SimpleStack import Stack                               # Imports the necess
 
 # Time Complexity: O()
 # Space Complexity: O()
-def is_palindrome(word):
+def is_palindrome(words):
 
-    lowercase = "abcdefghijklmnopqrstuvwxyz"                # Creates a string of lowercase letters
+    letters = "abcdefghijklmnopqrstuvwxyz"                  # Creates a string of lowercase alphabet
 
-    original_stack = Stack(len(word))                       # Creates two ojects of the Stack
-    copy_stack = Stack(len(word))                           # based on length of the word
+    original_stack = Stack(len(words))                      # Creates two objects of the Stack
+    copy_stack = Stack(len(words))                          # based on length of the word
 
-    for letter in word:                                     # Loops over each letters in word
-        if letter.lower() in lowercase:                     # if the letter is in lowercase
-            original_stack.push(letter.lower())
-            copy_stack.push(letter.lower())
+    for item in words:                                      # Loops over each item in words
+        if item.lower() in letters:                         # if the item is in letters
+            original_stack.push(item.lower())
+            copy_stack.push(item.lower())
 
     if original_stack.isEmpty():                            # Returns if the stack has no letters
         print("No letters were found.")
@@ -27,23 +27,20 @@ def is_palindrome(word):
     original_word, reverse = '',''                          # Build the orginal and reversed version
     while not original_stack.isEmpty():                     # by popping the stack until empty
         reverse += original_stack.pop()
-        original_word = copy_stack.pop() + original_word    # Adding each character after the other
+        original_word = copy_stack.pop() + original_word    # Prefixing each character
 
-    if original_word != reverse:                            # Returns False if not palindrome
-        return False
-
-    return True                                             # Returns True if palindrome
+    return original_word == reverse                         # Returns True if palindrome
 
 
 def main():
 
-    word = input("\nPlease Enter a String: ").strip()       # Asks the user for input
+    words = input("\nPlease Enter a String: ").strip()      # Asks the user for input
 
-    while not word:                                         # Loops until string is not empty
+    while not words:                                        # Loops until input is not empty
         print("String is Empty.")
-        word = input("\nPlease Enter a String: ").strip()
+        words = input("\nPlease Enter a String: ").strip()
 
-    result = is_palindrome(word)                            # Stores the result of the function call
+    result = is_palindrome(words)                           # Stores the result of the function call
 
     print(f"Result: {result}.")                             # Prints the result
 
