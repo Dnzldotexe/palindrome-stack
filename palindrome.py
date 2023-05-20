@@ -1,8 +1,8 @@
-"""
+'''
 Check if a string input is a palindrome or not
     Test case:
     A man, a plan, a canal, Panama.
-"""
+'''
 
 from SimpleStack import Stack                               # Imports the necessary python module
 
