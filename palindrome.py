@@ -1,6 +1,8 @@
-# Check if a string input is a palindrome or not
-    # Test case:
-    # A man, a plan, a canal, Panama.
+"""
+Check if a string input is a palindrome or not
+    Test case:
+    A man, a plan, a canal, Panama.
+"""
 
 from SimpleStack import Stack                               # Imports the necessary python module
 
@@ -23,7 +25,7 @@ def is_palindrome(word):
         return False
 
     original_word, reverse = '',''                          # Build the orginal and reversed version
-    while not original_stack.isEmpty():                     # by popping the original_stack until empty
+    while not original_stack.isEmpty():                     # by popping the stack until empty
         reverse += original_stack.pop()
         original_word = copy_stack.pop() + original_word    # Adding each character after the other
 
