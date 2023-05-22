@@ -34,15 +34,15 @@ def is_palindrome(words):
 
 def main():
 
-    words = input("\nPlease Enter a String: ").strip()      # Asks the user for input
+    while True:                                             # Loops until input is empty
+        words = input("\nIs it a palindrome: ").strip()
 
-    while not words:                                        # Loops until input is not empty
-        print("String is Empty.")
-        words = input("\nPlease Enter a String: ").strip()
+        if not words:                                       # Returns when input is empty
+            return
 
-    result = is_palindrome(words)                           # Stores the result of the function call
+        result = is_palindrome(words)                       # Stores the result of the function call
 
-    print(f"Result: {result}.")                             # Prints the result
+        print(f"Result: {result}.")                         # Prints the result
 
 
 main()                                                      # Runs the function
