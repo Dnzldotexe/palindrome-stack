@@ -6,8 +6,8 @@ Check if a string input is a palindrome or not
 
 from SimpleStack import Stack                               # Imports the necessary python module
 
-# Time Complexity: O()
-# Space Complexity: O()
+# Time Complexity: O(n)
+# Space Complexity: O(n)
 
 def is_palindrome(words):
     '''Determines if input is palindrome or not 
@@ -35,8 +35,8 @@ def is_palindrome(words):
 
     original_word, reverse = '',''                          # Build the orginal and reversed version
     while not original_stack.isEmpty():                     # by popping the stack until empty
-        reverse += original_stack.pop()
-        original_word = copy_stack.pop() + original_word    # Prefixing each character
+        reverse += original_stack.pop()                     # cba
+        original_word = copy_stack.pop() + original_word    # Prefixing each character abc
 
     return original_word == reverse                         # Returns True if palindrome
 
