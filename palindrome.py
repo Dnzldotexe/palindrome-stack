@@ -8,8 +8,17 @@ from SimpleStack import Stack                               # Imports the necess
 
 # Time Complexity: O()
 # Space Complexity: O()
-def is_palindrome(words):
 
+def is_palindrome(words):
+    '''Determines if input is palindrome or not 
+    
+    Args: 
+        string (str) text
+
+    Returns:
+        boolean (bool)
+
+    '''
     letters = "abcdefghijklmnopqrstuvwxyz"                  # Creates a string of lowercase alphabet
 
     original_stack = Stack(len(words))                      # Creates two objects of the Stack
@@ -33,7 +42,12 @@ def is_palindrome(words):
 
 
 def main():
+    '''Demonstrates the is_palindrome() function
+    
+    Prints: 
+        string (str) text
 
+    '''
     while True:                                             # Loops until input is empty
         words = input("\nIs it a palindrome: ").strip()
 
